@@ -3,450 +3,999 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Section</title>
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+<title>Alberto Rosario Pimentel - AI Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
-  .about-section {
-    text-align: center;
-    padding: 50px 0;
-  }
-  .about-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  .about-section img {
-    width: 200px; /* Adjust the size as needed */
-    height: 200px;
-    border-radius: 50%; /* Makes the image round */
-    margin-bottom: 20px;
-  }
-  .about-section p {
-    color: #333;
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --surface2: #16161f;
+    --border: #1e1e2e;
+    --accent: #7c6af7;
+    --accent2: #a78bfa;
+    --muted: #8080a0;
+    --text: #eeeef8;
+    --text-dim: #b0b0cc;
+    --mono: 'DM Mono', monospace;
+    --serif: 'DM Serif Display', serif;
+    --sans: 'DM Sans', sans-serif;
   }
 
-  /* Additional CSS for Projects Section */
-.projects-section h2 {
-  margin-bottom: 40px;
-  font-size: 2.5rem;
-}
-.card {
-  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Adds a subtle shadow around the card */
-}
-.card-img-top {
-  max-height: 180px; /* Adjust this value to fit the image properly in the card */
-  object-fit: cover; /* This makes sure the image covers the area properly */
-}
-  /* Center the cards in the row */
-.projects-section .row {
-  justify-content: center;
-}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
 
-/* Make all project cards the same height */
-.projects-section .card {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Make card body take remaining space so buttons align bottom */
-.projects-section .card-body {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-/* Fix image sizing to fit nicely inside the card */
-.projects-section .card-img-top {
-  width: 100%;
-  height: 180px; /* Keep this height */
-  object-fit: cover; /* Crop and fill nicely */
-  border-radius: 0; /* Optional: remove rounding if you want */
-}
-
-.card-body {
-  padding: 15px;
-}
-.card-title {
-  font-size: 1.25rem;
-}
-.card-text {
-  margin-bottom: 15px;
-}
-
-/* Additional CSS for Skills Section */
-.skills-section h2 {
-  margin-bottom: 40px;
-  font-size: 2.5rem;
-}
-.skills-section .card {
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-.skills-section .card-img-top {
-  padding: 20px; /* Add padding around your images if needed */
-  background-color: #f8f9fa; /* Adjust the background color if your images have transparent areas */
-  height: 180px; /* Fixed height for consistency */
-  object-fit: contain; /* This will make sure the image is scaled properly within the container */
-}
-.skills-section .card-body {
-  padding: 15px;
-}
-.skills-section .card-title {
-  font-size: 1.25rem;
-  margin-bottom: 15px;
-}
-.skills-section .btn-outline-primary {
-  color: #007bff;
-  border-color: #007bff;
-}
-.skills-section .btn-outline-primary:hover {
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-/* Additional CSS for Contact Section */
-.contact-section {
-  padding: 50px 0;
-}
-  
-.contact-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-}
-.contact-section p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-.social-icon {
-  width: 50px; /* Size of your icons */
-  margin-bottom: 10px;
-}
-/* Hover effect for icons */
-.social-icon:hover {
-  opacity: 0.7;
-}
-/* Style for links in the Contact section */
-.contact-section a {
-  color: #fff;
-  text-decoration: none; /* Removes underline from links */
-  display: inline-block; /* Allows for margin on the bottom */
-  margin-bottom: 10px;
-}
-  /* Center the contact info content */
-.contact-section .row {
-  justify-content: center;
-  text-align: center;
-}
-.contact-section a:hover {
-  color: #ddd; /* Color when hovering over the link */
-}
-
-/* CSS for Sticky Navbar */
-.navbar {
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds a shadow for depth */
-}
-
-/* Ensure padding is added to body to avoid content being hidden behind the navbar */
-body { 
-  padding-top: 56px; /* Adjust this value based on the height of your navbar */
-}
-
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Style for navigation bar links */
-.navbar-nav .nav-link {
-  color: white;
-}
-
-.navbar-nav .nav-link:hover {
-  color: #f8f9fa; /* Slightly lighter white when hovering over links */
-}
-
-/* Media query for responsive navbar collapsing */
-@media (max-width: 992px) {
-  .navbar-collapse {
-    background-color: #343a40; /* Same as navbar color for seamless look */
-  }
-}
-
-  .text-justify {
-    text-align: justify;
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
   }
 
-
-  #tech-stack table td:first-child {
-    width: 25%;
-    font-weight: 600;
-    background-color: #f8f9fa;
-  }
-  #tech-stack h2 {
-    font-weight: 700;
-    color: #0d6efd;
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
   }
 
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 clamp(1.5rem, 5vw, 4rem);
+    height: 64px;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
 
+  .nav-brand {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
 
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 clamp(1.5rem, 8vw, 8rem);
+    padding-top: 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(124,106,247,0.12) 0%, transparent 70%);
+    top: -200px;
+    right: -200px;
+    pointer-events: none;
+  }
+
+  .hero-glow-2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(167,139,250,0.07) 0%, transparent 70%);
+    bottom: 100px;
+    left: -100px;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    max-width: 820px;
+    animation: fadeUp 0.9s ease both;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  h1.hero-name {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    line-height: 1.05;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+  }
+
+  h1.hero-name em {
+    font-style: italic;
+    color: var(--accent2);
+  }
+
+  .hero-desc {
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    color: var(--text-dim);
+    max-width: 580px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1.75rem;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .hero-cta:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  section { padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 8vw, 8rem); }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--text);
+    line-height: 1.15;
+    margin-bottom: 3rem;
+  }
+
+  #about .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  #about .about-text p {
+    color: var(--text-dim);
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+  }
+
+  #about .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--accent);
+    opacity: 0.6;
+  }
+
+  .stat-icon {
+    font-family: var(--mono);
+    font-size: 1.25rem;
+    color: var(--accent2);
+    margin-bottom: 0.75rem;
+  }
+
+  .stat-title {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--text);
+    line-height: 1.25;
+    margin-bottom: 0.6rem;
+  }
+
+  .stat-body {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  #tech {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .stack-item {
+    background: var(--surface2);
+    padding: 1.75rem 2rem;
+    transition: background 0.2s;
+  }
+
+  .stack-item:hover { background: var(--bg); }
+
+  .stack-area {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  .stack-tools {
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: border-color 0.3s, transform 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .project-card:hover {
+    border-color: rgba(124,106,247,0.3);
+    transform: translateY(-3px);
+  }
+
+  .project-card:hover::after { transform: scaleX(1); }
+
+  .project-num {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  .project-title {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .project-desc {
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    flex: 1;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .project-link {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid rgba(124,106,247,0.4);
+    padding: 0.35rem 0.85rem;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .project-link:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
+  .project-link--disabled {
+    color: var(--muted);
+    border-color: var(--border);
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.55;
+  }
+
+  .projects-subsection-label {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .skill-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    transition: border-color 0.2s;
+  }
+
+  .skill-card:hover { border-color: rgba(124,106,247,0.3); }
+
+  .skill-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .skill-title {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+
+  .skill-desc {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+
+  .exp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .exp-item:last-child { border-bottom: none; }
+  .exp-meta { padding-top: 0.2rem; }
+
+  .exp-period {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .exp-company {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--accent2);
+    font-weight: 500;
+  }
+
+  .exp-role {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .exp-bullets li {
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  .exp-bullets li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.75rem;
+    top: 0.15rem;
+  }
+
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .edu-item {
+    background: var(--surface);
+    padding: 2rem;
+    transition: background 0.2s;
+  }
+
+  .edu-item:hover { background: var(--surface2); }
+
+  .edu-degree {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .edu-school {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+
+  .edu-period {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+
+  #contact {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+  }
+
+  .contact-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-email {
+    font-family: var(--mono);
+    font-size: clamp(0.9rem, 2vw, 1.15rem);
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--muted);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .contact-email:hover {
+    color: var(--accent2);
+    border-color: var(--accent2);
+  }
+
+  .contact-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-link {
+    font-family: var(--mono);
+    font-size: clamp(0.78rem, 1.5vw, 0.92rem);
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid rgba(124,106,247,0.4);
+    padding: 0.45rem 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+
+  .contact-link:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
+  footer {
+    padding: 2rem clamp(1.5rem, 8vw, 8rem);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  footer p {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+
+  .tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 0.2rem 0.55rem;
+    margin: 0.15rem;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    #about .about-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  }
 </style>
-
 </head>
 <body>
 
-<section id="about" class="about-section">
-  <div class="container">
-    <h2>Meet Alberto</h2>
-    <img src="icons/profile.jpg" alt="Me" class="mb-3" style="width: 200px; height: 200px; object-fit: cover; border-radius: 15px;">
-    <p style="text-align: justify;">
-      I'm a data scientist with a background in business intelligence and a strong focus on machine learning and forecasting. What drew me to data science was its creative problem-solving side, combining logic with innovation to find practical solutions.
-    </p>
-    <p style="text-align: justify;">
-      I enjoy building predictive models that make data actionable, especially in uncertain and fast-moving environments. My strengths lie in machine learning, a creative mindset, and a can-do attitude that helps me tackle complex challenges head-on.
-    </p>
-  </div>
-</section>
-
-<!-- ====== START: Tech Stack Section ====== -->
-<section id="tech-stack" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center mb-4">Tech Stack</h2>
-    <div class="table-responsive">
-      <table class="table table-striped table-bordered table-hover align-middle shadow-sm">
-        <thead class="thead-light text-center">
-          <tr>
-            <th scope="col">Area</th>
-            <th scope="col">Technologies / Tools</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Programming Languages</strong></td>
-            <td>Python, SQL</td>
-          </tr>
-          <tr>
-            <td><strong>Machine Learning Libraries</strong></td>
-            <td>Scikit-learn, H2O AutoML, PyCaret, MLflow, XGBoost, LightGBM, CatBoost, feature-engine, imbalanced-learn</td>
-          </tr>
-          <tr>
-            <td><strong>Deep Learning</strong></td>
-            <td>TensorFlow, Keras, Hugging Face Transformers</td>
-          </tr>
-          <tr>
-            <td><strong>Data Mining and Processing</strong></td>
-            <td>Pandas, NumPy, PySpark, Apache Spark</td>
-          </tr>
-          <tr>
-            <td><strong>Databases</strong></td>
-            <td>SQL, Snowflake, MongoDB, Oracle</td>
-          </tr>
-          <tr>
-            <td><strong>Cloud Computing</strong></td>
-            <td>Microsoft Azure, Azure Databricks</td>
-          </tr>
-          <tr>
-            <td><strong>Data Management / Statistical Analysis</strong></td>
-            <td>Data Wrangling, Data Cleaning, Statistical Analysis, Exploratory Data Analysis (EDA), Hypothesis Testing</td>
-          </tr>
-          <tr>
-            <td><strong>Visualization and Reporting</strong></td>
-            <td>Power BI, Tableau, Microsoft Excel (Advanced), Matplotlib, Seaborn, Plotly</td>
-          </tr>
-          <tr>
-            <td><strong>Development Environment</strong></td>
-            <td>Anaconda3, Jupyter Notebooks, Visual Studio Code, Docker</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-<!-- ====== END: Tech Stack Section ====== -->
-
-
-
-
-
-<!-- Projects Section -->
-<section id="projects" class="projects-section bg-light" id="projects">
-  <div class="container">
-    <h2 class="text-center">Projects</h2>
-    <div class="row">
-      <!-- Project 1 -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="icons/cover.jpg" class="card-img-top" alt="Project 1">
-          <div class="card-body">
-            <h5 class="card-title">Breast Cancer Model</h5>
-            <p class="card-text" style="text-align: justify;">Built a machine learning model to predict patient survival (alive vs. dead) using clinical and pathological data. Applied feature selection, model comparison (Random Forest, XGBoost, Stacking, etc.), and evaluated performance with class-specific metrics like precision, recall, and F1-Score</p>
-            <a href="https://github.com/albertorp-ds/portfolio/blob/master/ML/breast_cancer/V3_ALBERTO_ROSARIO_PIMENTEL_BREAST_CANCER.ipynb" class="btn btn-primary">Source Code</a>
-            <a href="https://nbviewer.org/github/albertorp-ds/portfolio/blob/master/ML/breast_cancer/V3_ALBERTO_ROSARIO_PIMENTEL_BREAST_CANCER.ipynb" class="btn btn-warning ms-2" >Notebook</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      
-       <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="ML/MSFT/MSFT_Image.png" class="card-img-top" alt="Project 3">
-          <div class="card-body">
-            <h5 class="card-title">Microsoft Stock Time Series Analysis</h5>
-            <p class="card-text" style="text-align: justify;">
-              Analyzed historical daily stock data for Microsoft Corporation (MSFT) sourced from Kaggle, focusing on trends in opening, closing, high, low prices, and trading volume. Built a time series model to forecast the stock’s closing price, aiming to capture temporal patterns.
-            </p>
-            <a href="https://github.com/albertorp-ds/portfolio/blob/master/ML/MSFT/MSFT_Time_model.ipynb" class="btn btn-primary">Source Code</a>
-            <a href="https://nbviewer.org/github/albertorp-ds/portfolio/blob/master/ML/MSFT/MSFT_Time_model.ipynb" class="btn btn-warning ms-2">Notebook</a>
-          </div>
-        </div>
-      </div>
-
-            <!-- Project 3 -->
-    <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="ML/Water_pump/Pump_16x9.png" class="card-img-top" alt="Project 2">
-        <div class="card-body">
-          <h5 class="card-title">Pump it Up: Mining the Water Table</h5>
-          <p class="card-text" style="text-align: justify;">
-            Used real-world data from DrivenData to build a machine learning model that predicts the operational status of water pumps across rural Tanzania. Focused on cleaning and engineering features. Trained a multi-class classifier to determine pump status.
-          </p>
-          <a href="https://github.com/albertorp-ds/portfolio/blob/master/ML/Water_pump/Tarea%20Alberto%20Rosario%20Pimentel%20VF%203%20(2do%20mejor).ipynb" class="btn btn-primary">Source Code</a>
-          <a href="https://nbviewer.org/github/albertorp-ds/portfolio/blob/master/ML/Water_pump/Tarea%20Alberto%20Rosario%20Pimentel%20VF%203%20%282do%20mejor%29.ipynb" class="btn btn-warning ms-2">Notebook</a>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
-</section>
-
-
-<!-- Skills Section -->
-<section id="skills" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center mb-4">Skills</h2>
-    <div class="row">
-
-      <!-- Programming & Data Engineering -->
-      <div class="col-md-6 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h4 class="card-title">Programming & Data Engineering</h4>
-            <p class="card-text text-justify">
-              I work primarily with Python and SQL to access, manipulate, and prepare data efficiently. Using Pandas, NumPy, and SQL queries, I clean, transform, and merge structured and unstructured datasets. I have experience working in Databricks using PySpark, and I’ve also used Azure to a basic extent. Most of my work is done in Jupyter notebooks, where I automate data workflows and create reusable code through functions and modular scripts.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Machine Learning & Modeling -->
-      <div class="col-md-6 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h4 class="card-title">Machine Learning & Modeling</h4>
-            <p class="card-text text-justify">
-              I design and train machine learning models for real-world problems, mostly in the financial domain. My work focuses on supervised learning — classification, regression, and time series forecasting. I manage the entire pipeline, including data cleaning, feature selection (e.g., SFS, RFE), handling imbalanced datasets (SMOTE, ADASYN), and hyperparameter tuning. I use Scikit-learn and Imbalanced-learn, and I evaluate model performance with robust validation techniques like cross-validation and walk-forward testing.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Data Visualization & Storytelling -->
-      <div class="col-md-6 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h4 class="card-title">Data Visualization & Storytelling</h4>
-            <p class="card-text text-justify">
-              I create visualizations that transform raw data into clear, actionable insights. I have experience building dynamic dashboards using Tableau and designing reports in Power BI. In Python, I use libraries like Matplotlib, Seaborn, and Plotly to develop custom visualizations. My focus is on making data accessible to both technical and non-technical audiences by emphasizing clarity, relevance, and visual impact.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Artificial Intelligence & Deep Learning -->
-      <div class="col-md-6 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h4 class="card-title">Artificial Intelligence & Deep Learning</h4>
-            <p class="card-text text-justify">
-              I have basic experience applying deep learning techniques using TensorFlow and Keras. I've built CNNs and RNNs for structured data and have worked with Hugging Face transformers for sentiment analysis and other NLP tasks. My current focus is on expanding my capabilities in neural network design and working with generative models and modern AI architectures.
-            </p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-<!-- Contact Me Section -->
-<section id="contact" class="contact-section text-center text-white bg-dark">
-  <div class="container">
-    <h2>Contact Me</h2>
-    <div class="row">
-      <div class="col-lg-6">
-        <p><i class="fas fa-envelope"></i> alrp.datascience@gmail.com</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-2 col-md-4 mb-4">
-        <a href="https://www.linkedin.com/in/albertorp-ds/" target="_blank">
-          <img src="icons/linkedin.png" alt="LinkedIn" class="social-icon">
-          LinkedIn
-        </a>
-      </div>
-
-      <div class="col-lg-2 col-md-4 mb-4">
-        <a href="https://github.com/albertorp-ds" target="_blank">
-          <img src="icons/github.png" alt="GitHub" class="social-icon">
-          GitHub
-        </a>
-    </div>
-  </div>
-</section>
-
-<!-- Sticky Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#home">Portfolio</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#tech-stack">Tech Stack</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#projects">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#skills">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-      </ul>
-
-    </div>
-  </div>
+<nav>
+  <a class="nav-brand" href="#hero">ARP</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#tech">Stack</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-content">
+    <div class="hero-tag">AI Engineer &amp; Data Scientist</div>
+    <h1 class="hero-name">Alberto<br>Rosario <em>Pimentel</em></h1>
+    <p class="hero-desc">Building AI systems with strong data science foundations: LLMs, RAG pipelines, deep learning, NLP, computer vision, and reproducible ML workflows. Currently researching multimodal models for depression detection at UPM.</p>
+    <a href="#contact" class="hero-cta">Get in touch</a>
+  </div>
+</section>
 
-<!-- Bootstrap JS and dependencies (jQuery and Popper) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.5/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<section id="about">
+  <div class="section-label">01 — About</div>
+  <h2 class="section-title">A bit about me</h2>
+  <div class="about-grid">
+    <div class="about-text fade-in">
+      <p>I'm an AI Engineer and Data Scientist with a strong foundation in machine learning, deep learning, and generative AI. What motivates me is the challenge of transforming complex, real-world data into intelligent systems that are reliable, practical, and capable of creating meaningful impact.</p>
+      <p>My professional background combines more than three years of experience in data analytics within the banking sector with hands-on work in data engineering and AI applications. This combination has given me a strong appreciation for the entire lifecycle of data-driven systems, from data quality and infrastructure to model development and deployment.</p>
+      <p>In recent years, I have focused on artificial intelligence, working with technologies such as LLMs, retrieval-augmented generation (RAG), vector databases, and multimodal deep learning. I have contributed to the development and deployment of AI solutions in production environments while continuing to deepen my expertise through advanced academic training.</p>
+      <p>I hold a Master's degree in Data Science, Big Data &amp; Business Analytics and have completed a Master's in Deep Learning at the Polytechnic University of Madrid (UPM). My master's thesis explores the generalization limits of multimodal GNN-GRU architectures for clinical depression assessment using the DAIC-WOZ dataset, with a particular focus on understanding the challenges that arise when deploying AI systems beyond controlled research settings.</p>
+    </div>
+    <div class="about-stats fade-in">
+      <div class="stat-card">
+        <div class="stat-icon">◎</div>
+        <div class="stat-title">What I'm looking for</div>
+        <div class="stat-body">A consulting or AI services environment where I can ship real solutions — RAG systems, intelligent agents, multimodal models — across different industries and problem spaces.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">◈</div>
+        <div class="stat-title">How I work</div>
+        <div class="stat-body">I think end-to-end: from data pipelines and experiment tracking to model deployment. I care about reproducibility, clean architecture, and systems that hold up under real conditions.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">◇</div>
+        <div class="stat-title">Core specializations</div>
+        <div class="stat-body">LLMs &amp; RAG in production · Graph Neural Networks · Multimodal deep learning · NLP · Data engineering at scale</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">◉</div>
+        <div class="stat-title">Longer-term goal</div>
+        <div class="stat-body">Build AI systems that tackle hard, domain-specific problems — clinical, financial, industrial — where the gap between a research result and a working product is the interesting challenge.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tech">
+  <div class="section-label">02 - Tech Stack</div>
+  <h2 class="section-title">Tools &amp; technologies</h2>
+  <div class="stack-grid fade-in">
+    <div class="stack-item">
+      <div class="stack-area">AI &amp; Deep Learning</div>
+      <div class="stack-tools">PyTorch - PyTorch Lightning - PyTorch Geometric - TensorFlow - Hugging Face - Transformers - LLMs - Fine-Tuning - NLP - Computer Vision - Multimodal Learning</div>
+    </div>
+    <div class="stack-item">
+      <div class="stack-area">Generative AI &amp; RAG</div>
+      <div class="stack-tools">LangChain - Weaviate - Semantic Search - RAG Pipelines - LLM Agents - Vector Databases - Prompt Engineering</div>
+    </div>
+    <div class="stack-item">
+      <div class="stack-area">AI Engineering &amp; MLOps</div>
+      <div class="stack-tools">Weights &amp; Biases - MLflow - Docker - Git - CI/CD - Feature Engineering - Experiment Tracking - Reproducible Pipelines</div>
+    </div>
+    <div class="stack-item">
+      <div class="stack-area">Data Science &amp; Analytics</div>
+      <div class="stack-tools">Scikit-learn - XGBoost - Pandas - NumPy - SciPy - StatsModels - EDA - Hypothesis Testing - Data Wrangling - Imbalanced-learn</div>
+    </div>
+    <div class="stack-item">
+      <div class="stack-area">Data Engineering &amp; Cloud</div>
+      <div class="stack-tools">Python - SQL - PySpark - Apache Spark - Databricks - Snowflake - Microsoft Fabric - Azure Data Lake - ETL Pipelines - Data Quality</div>
+    </div>
+    <div class="stack-item">
+      <div class="stack-area">Visualization &amp; Reporting</div>
+      <div class="stack-tools">Power BI - Tableau - Matplotlib - Seaborn - Plotly</div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-label">03 - Projects</div>
+  <h2 class="section-title">Featured work</h2>
+
+  <div class="projects-subsection-label">AI &amp; Deep Learning</div>
+  <div class="projects-grid" style="margin-bottom: 3rem;">
+    <div class="project-card fade-in">
+      <div class="project-num">01</div>
+      <div class="project-title">Multimodal Depression Detection (TFM)</div>
+      <p class="project-desc">GNN + GRU architecture combining CLNF facial landmarks and deep audio features (COVAREP, Wav2Vec2) for PHQ-8 severity classification on the DAIC-WOZ dataset. Research focus on generalization limits of multimodal clinical models.</p>
+      <div>
+        <span class="tag">PyTorch Geometric</span>
+        <span class="tag">GNN</span>
+        <span class="tag">Multimodal</span>
+        <span class="tag">Clinical AI</span>
+      </div>
+      <div class="project-links">
+        <a href="#" class="project-link project-link--disabled">Code (soon)</a>
+        <a href="#" class="project-link project-link--disabled">Notebook (soon)</a>
+        <a href="#" class="project-link project-link--disabled">Thesis (soon)</a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-num">02</div>
+      <div class="project-title">Conditional Variational AutoEncoder</div>
+      <p class="project-desc">Conditional VAE for generative deep learning: encodes images into a probabilistic latent space and conditions the decoder on class labels to reconstruct and generate controlled samples.</p>
+      <div>
+        <span class="tag">Python</span>
+        <span class="tag">Deep Learning</span>
+        <span class="tag">VAE</span>
+        <span class="tag">Generative AI</span>
+        <span class="tag">Matplotlib</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/albertorp-ds/portfolio/blob/master/AI/Conditional_Variational_AutoEncoder_EN.ipynb" class="project-link" target="_blank" rel="noopener">Code</a>
+        <a href="https://nbviewer.org/github/albertorp-ds/portfolio/blob/master/AI/Conditional_Variational_AutoEncoder_EN.ipynb" class="project-link" target="_blank" rel="noopener">Notebook</a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-num">03</div>
+      <div class="project-title">Medical Image Segmentation</div>
+      <p class="project-desc">Computer vision notebook for medical image segmentation, covering preprocessing, mask prediction, model training, and visual evaluation of pixel-level segmentation outputs.</p>
+      <div>
+        <span class="tag">Python</span>
+        <span class="tag">Computer Vision</span>
+        <span class="tag">Segmentation</span>
+        <span class="tag">CNN</span>
+        <span class="tag">Medical AI</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/albertorp-ds/portfolio/blob/master/AI/Medical_Image_Segmentation_EN.ipynb" class="project-link" target="_blank" rel="noopener">Code</a>
+        <a href="https://nbviewer.org/github/albertorp-ds/portfolio/blob/master/AI/Medical_Image_Segmentation_EN.ipynb" class="project-link" target="_blank" rel="noopener">Notebook</a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-num">04</div>
+      <div class="project-title">Semantic Similarity</div>
+      <p class="project-desc">NLP workflow for measuring semantic similarity between texts using embedding-based representations and similarity scoring, useful for retrieval, clustering, and search-style applications.</p>
+      <div>
+        <span class="tag">Python</span>
+        <span class="tag">NLP</span>
+        <span class="tag">Embeddings</span>
+        <span class="tag">Semantic Search</span>
+        <span class="tag">Similarity</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/albertorp-ds/portfolio/blob/master/AI/Sematic_Similarity.ipynb" class="project-link" target="_blank" rel="noopener">Code</a>
+        <a href="https://nbviewer.org/github/albertorp-ds/portfolio/blob/master/AI/Sematic_Similarity.ipynb" class="project-link" target="_blank" rel="noopener">Notebook</a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-num">05</div>
+      <div class="project-title">Temperature Probabilistic Forecasting</div>
+      <p class="project-desc">Probabilistic forecasting project for temperature time series, focused on estimating uncertainty around predictions rather than only producing point forecasts.</p>
+      <div>
+        <span class="tag">Python</span>
+        <span class="tag">Forecasting</span>
+        <span class="tag">Time Series</span>
+        <span class="tag">Probabilistic ML</span>
+        <span class="tag">Visualization</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/albertorp-ds/portfolio/blob/master/AI/Temperature_Probabilistic_Forecasting_EN.ipynb" class="project-link" target="_blank" rel="noopener">Code</a>
+        <a href="https://nbviewer.org/github/albertorp-ds/portfolio/blob/master/AI/Temperature_Probabilistic_Forecasting_EN.ipynb" class="project-link" target="_blank" rel="noopener">Notebook</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-subsection-label">Machine Learning</div>
+  <div class="projects-grid">
+    <div class="project-card fade-in">
+      <div class="project-num">06</div>
+      <div class="project-title">Breast Cancer Survival Prediction</div>
+      <p class="project-desc">End-to-end ML pipeline for binary survival prediction using clinical and pathological features. Feature selection (SFS, RFE), class imbalance handling (SMOTE), and comparison of Random Forest, XGBoost, and stacking ensembles.</p>
+      <div class="project-links">
+        <a href="https://github.com/albertorp-ds/portfolio/blob/master/ML/breast_cancer/V3_ALBERTO_ROSARIO_PIMENTEL_BREAST_CANCER.ipynb" class="project-link" target="_blank" rel="noopener">Code</a>
+        <a href="https://nbviewer.org/github/albertorp-ds/portfolio/blob/master/ML/breast_cancer/V3_ALBERTO_ROSARIO_PIMENTEL_BREAST_CANCER.ipynb" class="project-link" target="_blank" rel="noopener">Notebook</a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-num">07</div>
+      <div class="project-title">Microsoft Stock Time Series Forecasting</div>
+      <p class="project-desc">Time series analysis and forecasting of MSFT closing price from historical Kaggle data. Explored temporal patterns across open, close, high, low, and volume features.</p>
+      <div class="project-links">
+        <a href="https://github.com/albertorp-ds/portfolio/blob/master/ML/MSFT/MSFT_Time_model.ipynb" class="project-link" target="_blank" rel="noopener">Code</a>
+        <a href="https://nbviewer.org/github/albertorp-ds/portfolio/blob/master/ML/MSFT/MSFT_Time_model.ipynb" class="project-link" target="_blank" rel="noopener">Notebook</a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-num">08</div>
+      <div class="project-title">Pump it Up: Water Table Mining</div>
+      <p class="project-desc">Multi-class classification on DrivenData's Tanzania water pump dataset. Extensive feature engineering and cleaning to predict operational status across thousands of rural pump installations.</p>
+      <div class="project-links">
+        <a href="https://github.com/albertorp-ds/portfolio/blob/master/ML/Water_pump/Tarea%20Alberto%20Rosario%20Pimentel%20VF%203%20(2do%20mejor).ipynb" class="project-link" target="_blank" rel="noopener">Code</a>
+        <a href="https://nbviewer.org/github/albertorp-ds/portfolio/blob/master/ML/Water_pump/Tarea%20Alberto%20Rosario%20Pimentel%20VF%203%20%282do%20mejor%29.ipynb" class="project-link" target="_blank" rel="noopener">Notebook</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-label">04 - Experience</div>
+  <h2 class="section-title">Where I've worked</h2>
+  <div class="exp-list">
+    <div class="exp-item fade-in">
+      <div class="exp-meta">
+        <div class="exp-period">Feb 2026 - Present</div>
+        <div class="exp-company">Stratebi</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Data Science &amp; AI Intern</div>
+        <ul class="exp-bullets">
+          <li>Optimized and deployed Generative AI solutions in production: RAG pipelines, LLM-based agents, and conversational systems with CI/CD practices.</li>
+          <li>Built knowledge ingestion pipelines and vector database solutions with Weaviate for enterprise semantic search applications.</li>
+          <li>Delivered training programs on Generative AI, NLP, and intelligent agents for clients and multidisciplinary teams.</li>
+          <li>Developed analytics and data workflow solutions using Microsoft Fabric, Pentaho, and Power BI, connecting ETL processes with reporting and decision-support use cases.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item fade-in">
+      <div class="exp-meta">
+        <div class="exp-period">Mar 2022 - Mar 2025</div>
+        <div class="exp-company">Superintendencia de Bancos</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Data Analyst</div>
+        <ul class="exp-bullets">
+          <li>Built analytics workflows and automated Python/SQL pipelines processing 100K+ monthly records across Oracle database tables, supporting reporting, validation, and decision-making processes.</li>
+          <li>Optimized 25+ critical SQL queries (CTEs, window functions, joins, aggregations), improving performance by 70% and making recurrent analysis faster and more reliable.</li>
+          <li>Collaborated with Risk, Compliance, and IT teams on analytics initiatives that improved reporting accuracy and stakeholder decision-making.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education" style="padding-top: 0;">
+  <div class="section-label">05 - Education</div>
+  <h2 class="section-title">Academic background</h2>
+  <div class="edu-grid fade-in">
+    <div class="edu-item">
+      <div class="edu-school">UPM</div>
+      <div class="edu-degree">Master's in Deep Learning / Artificial Intelligence</div>
+      <div class="edu-period">Sep 2025 - Jul 2026</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-school">UCM</div>
+      <div class="edu-degree">Master's in Data Science, Big Data &amp; Business Analytics</div>
+      <div class="edu-period">Oct 2024 - Sep 2025 - 8.8/10</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-school">UNIBE</div>
+      <div class="edu-degree">Bachelor's in Business Administration</div>
+      <div class="edu-period">Sep 2019 - Jul 2023 - Business Intelligence</div>
+    </div>
+    <div class="edu-item" style="background: var(--surface2);">
+      <div class="edu-school">Certifications</div>
+      <div class="edu-degree">Snowflake SnowPro Associate</div>
+      <div class="edu-period">2025</div>
+      <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+        <div class="edu-degree" style="font-size: 0.95rem;">Google Data Analytics Professional</div>
+        <div class="edu-period">2021</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-label">06 - Skills</div>
+  <h2 class="section-title">Core capabilities</h2>
+  <div class="skills-grid">
+    <div class="skill-card fade-in">
+      <span class="skill-icon">*</span>
+      <div class="skill-title">Generative AI Applications</div>
+      <p class="skill-desc">Building AI-powered applications that integrate large language models, retrieval systems, and agent-based workflows to deliver practical solutions for real-world business use cases.</p>
+    </div>
+    <div class="skill-card fade-in">
+      <span class="skill-icon">*</span>
+      <div class="skill-title">Deep Learning &amp; Multimodal AI</div>
+      <p class="skill-desc">Designing and evaluating neural architectures for NLP, multimodal learning, and graph-structured data, with a particular interest in understanding model generalization and robustness.</p>
+    </div>
+    <div class="skill-card fade-in">
+      <span class="skill-icon">*</span>
+      <div class="skill-title">AI Engineering &amp; MLOps</div>
+      <p class="skill-desc">Developing production-ready AI systems through reproducible experimentation, deployment automation, and engineering best practices that enable reliable and maintainable machine learning solutions.</p>
+    </div>
+    <div class="skill-card fade-in">
+      <span class="skill-icon">*</span>
+      <div class="skill-title">Data Science &amp; Analytics</div>
+      <p class="skill-desc">Combining analytical thinking, statistical reasoning, and domain expertise to extract insights from data and support decision-making, backed by more than three years of professional experience in the financial sector.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-inner fade-in">
+    <div>
+      <div class="section-label">07 - Contact</div>
+      <h2 class="section-title" style="margin-bottom: 1rem;">Let's talk.</h2>
+      <p style="color: var(--text-dim); font-size: 1rem; max-width: 420px;">Open to AI Engineering, Data Science, Generative AI, and applied ML opportunities. Don't hesitate to reach out.</p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:Alrp.datascience@gmail.com" class="contact-email">Alrp.datascience@gmail.com</a>
+      <a href="https://github.com/albertorp-ds" class="contact-link" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/albertorp-ds/" class="contact-link" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>(c) 2026 Alberto Rosario Pimentel</p>
+  <p>AI Engineer - Madrid, Spain</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
